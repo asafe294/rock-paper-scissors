@@ -1,13 +1,42 @@
+const gamebox = document.querySelector('.gamebox')
+const start = document.querySelector('#start-button')
+let main_text = document.querySelector('#console')
+
+start.addEventListener('click', function (e) {
+    start.remove()
+    //creates the rock button
+    const rock = document.createElement('button')
+    rock.setAttribute('id', 'ROCK')
+    rock.textContent = 'rock'
+    gamebox.appendChild(rock)
+
+    //creates the paper button
+    const paper = document.createElement('button')
+    paper.setAttribute('id', 'PAPER')
+    paper.textContent = 'paper'
+    gamebox.appendChild(paper)
+
+    //creates the scissors button
+    const scissors = document.createElement('button')
+    scissors.setAttribute('id','SCISSORS')
+    scissors.textContent = 'scissors'
+    gamebox.appendChild(scissors)
+
+    main_text.textContent = 'Chosse one!'
+
+
+})
+
+
+
 function getComputerChoice() {
     let computer = ['rock', 'paper', 'scissors']
     return computer[Math.floor(Math.random()*computer.length)]
 }
-
-
-
+/*
 function singleRound () {
     let comp = getComputerChoice()
-    let player = prompt()
+    let player = 
 
     if (comp === "rock" && player === "rock") {
         return "tie"
@@ -55,7 +84,7 @@ function game(){
     let pp = 0
     let cp = 0
     let tie = 0
-
+    
     for(let i=0; i<6; i++) {
         let round = singleRound()
         if (round == "tie") {
@@ -87,3 +116,4 @@ function game(){
     return msg
 }
 alert(game())
+*/
